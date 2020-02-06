@@ -19,7 +19,7 @@ const Header: React.FC<Props> = ({ siteTitle }: Props) => {
     grid-template-columns: 1fr auto auto;
     grid-gap: ${tokens.spacing.large}px;
     margin: 0 auto;
-    width: ${tokens.CONTENT_WIDTH}px;
+    max-width: ${tokens.CONTENT_WIDTH}px;
   `
 
   const NavLink = styled(PlainLink)`

@@ -22,8 +22,11 @@ const Image: React.FC<Props> = ({ src, maxWidth, align, children }: Props) => {
     if (align === "right") {
       return `0 0 ${tokens.spacing.medium}px ${tokens.spacing.small}px`
     }
+    if (align === 'left') {
+      return `0 ${tokens.spacing.small}px ${tokens.spacing.medium}px 0`
+    }
 
-    return `0 ${tokens.spacing.small}px ${tokens.spacing.medium}px 0`
+    return `${tokens.spacing.large}px 0`
   }
 
   const Container = styled.div<ContainerProps>`

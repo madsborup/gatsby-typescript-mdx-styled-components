@@ -6,7 +6,7 @@ interface Props {
   src: string
   maxWidth?: string
   align?: "right" | "left"
-  children?: React.ReactNode;
+  children?: React.ReactNode
 }
 
 interface ContainerProps {
@@ -20,10 +20,10 @@ interface ImageProps {
 const Image: React.FC<Props> = ({ src, maxWidth, align, children }: Props) => {
   const handleMargin = (align: "right" | "left") => {
     if (align === "right") {
-      return `0 0 ${tokens.spacing.medium}px ${tokens.spacing.small}px`
+      return `0 0 ${tokens.spacing.medium}px ${tokens.spacing.xsmall}px`
     }
-    if (align === 'left') {
-      return `0 ${tokens.spacing.small}px ${tokens.spacing.medium}px 0`
+    if (align === "left") {
+      return `0 ${tokens.spacing.small}px ${tokens.spacing.xsmall}px 0`
     }
 
     return `${tokens.spacing.large}px 0`
@@ -52,7 +52,7 @@ const Image: React.FC<Props> = ({ src, maxWidth, align, children }: Props) => {
   return (
     <Container align={align}>
       <StyledImage src={src} maxWidth={maxWidth} />
-      <Caption>{children}</Caption>
+      {children && <Caption>{children}</Caption>}
     </Container>
   )
 }
